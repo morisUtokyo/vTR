@@ -5,6 +5,7 @@ vTR (program for computing Variant units in mosaic Tandem Repeats) feeds an inpu
 For example, the upper string in following alignment shows an estimated pattern (AGGGG)3(AAAAGAAAGAGAGGG)2, the lower string is an input string, and the alignment displays 39 matches, 4 mismatches, and 5 indels.
 
 > AGGGG -A-GGGG AGGGG AAAAGAAAGA-GAGGG AAAAGAAAGAGAGGG
+> 
 > AGGGG AAGGGGG A-GGT AAAAGTAAGAGGA-GG AAAAGAAAGAAAGGT
 
 Although the estimated pattern, (AGGGG)3(AAAAGAAAGAGAGGG)2, is concise and is easier to understand the structure of the mosaic tandem repeat, to see what substitutions and indels are present in the lower string precisely, it would be useful to examine a series of unit variants in the string:

@@ -2,11 +2,9 @@
 
 vTR (program for computing Variant units in mosaic Tandem Repeats) feeds an input string and an estimated mosaic tandem repeat that partly matches the input, and output a series of variant units.
 
-For example, the upper string in following alignment shows an estimated pattern (AGGGG)3(AAAAGAAAGAGAGGG)2, the lower string is an input string, and the alignment displays 39 matches (|), 4 mismatches (X), 5 indels (-).
+For example, the upper string in following alignment shows an estimated pattern (AGGGG)3(AAAAGAAAGAGAGGG)2, the lower string is an input string, and the alignment displays 39 matches, 4 mismatches, and 5 indels.
 
 > AGGGG -A-GGGG AGGGG AAAAGAAAGA-GAGGG AAAAGAAAGAGAGGG
->
-> |||||  | |||| | ||X |||||X|||| || || ||||||||||X|||X
 >
 > AGGGG AAGGGGG A-GGT AAAAGTAAGAGGA-GG AAAAGAAAGAAAGGT
 

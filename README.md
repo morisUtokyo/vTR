@@ -17,11 +17,13 @@ Although the estimated pattern, (AGGGG)3(AAAAGAAAGAGAGGG)2, is concise and is ea
 For this purpose, vTR is developed to output the above decomposition from the estimated pattern and the input string. vTR feeds a fasta file of the form
 
 > \> #Pat (AGGGG)3(AAAAGAAAGAGAGGG)2
+>
 > AGGGGAAGGGGGAGGTAAAAGTAAGAGGAGGAAAAGAAAGAAAGGT
 
 where the pattern following #Pat shows the original pattern, and vYT outputs
 
 > \> #Len 46 #Err 0.188 #Pat <AGGGG>3<AAAAGAAAGAGAGGG>2 #PrecisePat <AGGGG>1<AAGGGGG>1<AGGT>1<AAAAGTAAGAGGAGG>1<AAAAGAAAGAAAGGT>1
+>
 > AGGGGAAGGGGGAGGTAAAAGTAAGAGGAGGAAAAGAAAGAAAGGT
 
 where "#Len 46" means the input is of length 46, and "#Err 0.188" shows the error rate between the pattern and the input string. 

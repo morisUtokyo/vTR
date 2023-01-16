@@ -40,6 +40,6 @@ For your convenience, a copy of the KSW2 program is placed on this github.
 
 ## Usage
 
-vTR -f fasta_file] 
+vTR -f [fasta_file] 
 * -f: Input a fasta file, say sample.fasta
 

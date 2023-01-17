@@ -17,8 +17,8 @@ typedef struct{
     char    info[MAX_READ_LENGTH];
     char    ID[MAX_READ_LENGTH];
     char    RegExpression[MAX_READ_LENGTH];
-    char    pattern_string[MAX_READ_LENGTH];        // add to uTR.sh
-    char    preciseRegExp[MAX_READ_LENGTH];  // add to uTR.sh
+    char    pattern_string[MAX_READ_LENGTH];
+    char    preciseRegExp[MAX_READ_LENGTH];
     int     numMatches;
     int     numMismatches;
     int     numDeletions;
@@ -26,13 +26,11 @@ typedef struct{
     float   error_rate;
 } Read;
 
-// add to uTR.sh
 typedef struct{
     int     len;
     char    type;
 } cigarType;
 
-// add to uTR.sh
 typedef struct{
     char    unit[INTERNAL_UNIT_LENGTH];
     char    variant[INTERNAL_UNIT_LENGTH];
@@ -189,12 +187,10 @@ int unitVariant(char cigarType, unitType *unitArray, Read *currentRead, int ip, 
             // Print the previous run of representative units
             if(0 < unitArray[iUnits].runLength)
                 sprintf( currentRead->preciseRegExp, "%s<%s>%d", currentRead->preciseRegExp, unitArray[iUnits].unit, unitArray[iUnits].runLength);
-                //printf("(%s)%d\n", unitArray[iUnits].unit, unitArray[iUnits].runLength);
             unitArray[iUnits].runLength = 0;
             // Print the focal variant
             unitArray[iUnits].variant[posVariant] = '\0';
             sprintf( currentRead->preciseRegExp, "%s<%s>1", currentRead->preciseRegExp, unitArray[iUnits].variant);
-            //printf("(%s)*\n", unitArray[iUnits].variant);
         }
         // Reset
         unitArray[iUnits].variantState = 0;
@@ -205,7 +201,6 @@ int unitVariant(char cigarType, unitType *unitArray, Read *currentRead, int ip, 
         // Print the previous run of representative units
         if(0 < unitArray[iUnits].runLength)
             sprintf( currentRead->preciseRegExp, "%s<%s>%d", currentRead->preciseRegExp, unitArray[iUnits].unit, unitArray[iUnits].runLength);
-            //printf("(%s)%d\n", unitArray[iUnits].unit, unitArray[iUnits].runLength);
         // Move on to the next unit and reset run length etc.
         iUnits++;
         unitArray[iUnits].runLength = 0;
@@ -260,7 +255,7 @@ void comp_preciseRegExp(Read *currentRead){
     int len_pattern = 0;
     for(int j=0; j<nUnits; j++)
         len_pattern += strlen(unitArray[j].unit) * unitArray[j].occ;
-    int sc_mch = 1; int sc_mis = (-1) * sc_mch; int gapo = 0; int gape = 1;
+    int sc_mch = 1; int sc_mis = -1; int gapo = 0; int gape = 1;
     int nCigar = align(currentRead->pattern_string, currentRead->string, sc_mch, sc_mis, gapo, gape, cigarArray);
         
     // While scanning the CIGAR format, calculate variants of each representative unit.

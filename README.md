@@ -43,3 +43,6 @@ For your convenience, a copy of the KSW2 program is placed on this github.
 vTR -f [fasta_file] 
 * -f: Input a fasta file, say sample.fasta
 
+## Read data
+
+Real data and a script program "test.sh" for calculating variant units are found in the directory realdata/ .

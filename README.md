@@ -1,3 +1,12 @@
+## Usage
+
+vTR -f [fasta_file] 
+* -f: Input a fasta file, say sample.fasta
+
+## Read data
+
+Real data and a script program "test.sh" for calculating variant units are found in the directory realdata/ .
+
 ## Introduction
 
 vTR (program for computing Variant units in mosaic Tandem Repeats) feeds an input string and an estimated mosaic tandem repeat that partly matches the input, and output a series of variant units.
@@ -27,8 +36,6 @@ where "#Len 46" means the input is of length 46, and "#Err 0.188" shows the erro
 
 The error rate is defined as the sum of mismatches, insertions, and deletions (denoted by X) devided by the sum of the number of matches and X (denoted by Y), namely X/Y. In the running example, X = 9(=4+5), Y = 48, and X/Y = 0.188 = 9/48.
 
-A sample code with data is available at test/test_sample.sh.
-
 vTR use KSW2, a library to align a pair of reads that implements a global alignment dynamic programming algorithm. You can obtain a copy of the KSW2 program from:
 
 https://github.com/lh3/ksw2
@@ -37,12 +44,3 @@ https://github.com/lh3/ksw2
 > * Li, H (2018) Minimap2: pairwise alignment for nucleotide sequences. *Bioinformatics*, **34**:3094-3100.
 
 For your convenience, a copy of the KSW2 program is placed on this github.
-
-## Usage
-
-vTR -f [fasta_file] 
-* -f: Input a fasta file, say sample.fasta
-
-## Read data
-
-Real data and a script program "test.sh" for calculating variant units are found in the directory realdata/ .

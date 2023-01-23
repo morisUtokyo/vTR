@@ -22,7 +22,7 @@ TR_vTR=$dir/$genome"_vTR.fasta"
 $uTR -f $TR_file -u $unit -stda -o $TR_uTR 1> $uTR_stat
 $vTR -f $TR_uTR > $TR_vTR
 
-genome="minisatellites_CACNA1C_Bipolor"
+genome="minisatellites_CACNA1C_Bipolar"
 unit=AATCACACGACCCTGACCTGACTAGTTTAC
 TR_file=$dir/$genome".fasta"
 TR_uTR=$dir/$genome"_uTR.fasta"
